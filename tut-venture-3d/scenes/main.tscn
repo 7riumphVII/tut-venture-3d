@@ -29,31 +29,31 @@
 [ext_resource type="PackedScene" uid="uid://cobeujx10pgwg" path="res://scenes/props/stack_of_coins.tscn" id="27_c6pm6"]
 [ext_resource type="PackedScene" uid="uid://bbeqa2y66ysne" path="res://scenes/props/candles.tscn" id="28_5he1u"]
 
+[sub_resource type="Gradient" id="Gradient_2f3dj"]
+offsets = PackedFloat32Array(0, 0.10273973, 0.9315069, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.03812664, 0.036399998, 0.14, 1, 0.99, 0.90651, 0.7623, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yq6so"]
+gradient = SubResource("Gradient_2f3dj")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2f3dj"]
 
 [sub_resource type="Sky" id="Sky_yq6so"]
 sky_material = SubResource("ProceduralSkyMaterial_2f3dj")
-radiance_size = 5
 
 [sub_resource type="Environment" id="Environment_jyhfs"]
 background_mode = 2
 sky = SubResource("Sky_yq6so")
 ambient_light_source = 3
-ambient_light_color = Color(0.4149491, 0.2000853, 0.0039416123, 1)
-ambient_light_sky_contribution = 0.2
-tonemap_mode = 1
-tonemap_exposure = 1.82
+ambient_light_sky_contribution = 0.25
+tonemap_mode = 3
+tonemap_exposure = 1.83
+tonemap_white = 10.42
 ssao_enabled = true
-ssao_radius = 5.61
-ssao_intensity = 8.43
-glow_enabled = true
-glow_intensity = 2.86
-glow_bloom = 0.2
-fog_enabled = true
-fog_light_color = Color(0.2280536, 0.24422577, 0.3267039, 1)
-fog_sky_affect = 0.0
+ssao_radius = 7.42
+ssao_intensity = 12.26
 adjustment_enabled = true
-adjustment_contrast = 1.205
+adjustment_color_correction = SubResource("GradientTexture1D_yq6so")
 
 [node name="Main" type="Node3D" unique_id=173235]
 
