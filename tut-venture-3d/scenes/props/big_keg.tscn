@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cwfs2ijbpis4k"]
+
+[ext_resource type="PackedScene" uid="uid://sk1ao1u4yikb" path="res://models/props/keg_decorated.glb" id="1_43pxq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hrto"]
+size = Vector3(3.1000001, 1, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3l8xt"]
+size = Vector3(1.3000001, 1, 1.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jkeki"]
+height = 1.925
+radius = 0.90000004
+
+[node name="big_keg" type="StaticBody3D" unique_id=1276868139]
+
+[node name="keg_decorated2" parent="." unique_id=1045504233 instance=ExtResource("1_43pxq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1686324946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5012381, 5.9604645e-08)
+shape = SubResource("BoxShape3D_2hrto")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=607515540]
+transform = Transform3D(0.9848077, 0, 0.17364818, 0, 1, 0, -0.17364818, 0, 0.9848077, -1.007923, 1.5012381, -0.040557925)
+shape = SubResource("BoxShape3D_3l8xt")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=700621352]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.371139e-08, -0.99999994, 0, 1, -4.3711385e-08, 0.79207695, 1.2012382, -0.028058007)
+shape = SubResource("CylinderShape3D_jkeki")

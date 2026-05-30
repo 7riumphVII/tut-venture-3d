@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqjyml78wjmm3"]
+
+[ext_resource type="PackedScene" uid="uid://do0g0spc3pvf1" path="res://models/props/banner_mounted.glb" id="1_3imls"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpoem"]
+size = Vector3(1.4, 3.1000001, 0.3)
+
+[node name="MountedBanner" type="StaticBody3D" unique_id=864847648]
+
+[node name="banner_mounted" parent="." unique_id=1049084058 instance=ExtResource("1_3imls")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1167549226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0.5)
+shape = SubResource("BoxShape3D_mpoem")
