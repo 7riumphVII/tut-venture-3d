@@ -30,8 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://bbeqa2y66ysne" path="res://scenes/props/candles.tscn" id="28_5he1u"]
 
 [sub_resource type="Gradient" id="Gradient_2f3dj"]
-offsets = PackedFloat32Array(0, 0.10273973, 0.9315069, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.03812664, 0.036399998, 0.14, 1, 0.99, 0.90651, 0.7623, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.11643836, 0.91780823, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.025999997, 0.032933325, 0.13, 1, 0.97957164, 0.8703033, 0.7003263, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_yq6so"]
 gradient = SubResource("Gradient_2f3dj")
@@ -40,18 +40,17 @@ gradient = SubResource("Gradient_2f3dj")
 
 [sub_resource type="Sky" id="Sky_yq6so"]
 sky_material = SubResource("ProceduralSkyMaterial_2f3dj")
+radiance_size = 6
 
 [sub_resource type="Environment" id="Environment_jyhfs"]
 background_mode = 2
 sky = SubResource("Sky_yq6so")
-ambient_light_source = 3
-ambient_light_sky_contribution = 0.25
-tonemap_mode = 3
-tonemap_exposure = 1.83
-tonemap_white = 10.42
+tonemap_mode = 4
+tonemap_agx_white = 15.05
+tonemap_agx_contrast = 1.67
 ssao_enabled = true
-ssao_radius = 7.42
-ssao_intensity = 12.26
+ssao_radius = 6.49
+ssao_intensity = 16.0
 adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture1D_yq6so")
 

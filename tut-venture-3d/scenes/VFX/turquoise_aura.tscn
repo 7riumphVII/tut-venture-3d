@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bnr1oerd7dy55"]
+
+[ext_resource type="Texture2D" uid="uid://0jdawcdilwux" path="res://particle_textures/flame_01_a.png" id="1_5ai7i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2sev"]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_5ai7i")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_53e6v"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1418919, 0.9550562), 0.10659748, 0.10659748, 0, 0, Vector2(0.47972977, 0.28089893), -2.660675, -2.660675, 0, 0, Vector2(0.76351357, 0), -0.23756054, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_4unhn"]
+curve = SubResource("Curve_53e6v")
+
+[sub_resource type="Gradient" id="Gradient_rdtab"]
+offsets = PackedFloat32Array(0, 0.29508197)
+colors = PackedColorArray(0, 0.6500001, 1, 1, 0.07751124, 0.8263893, 0.82640415, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n465l"]
+gradient = SubResource("Gradient_rdtab")
+
+[sub_resource type="Curve" id="Curve_dfphf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0472973, 0.24719107), 0.4943819, 0.4943819, 0, 0, Vector2(0.2702703, 0.82022476), 7.5587344, 7.5587344, 0, 0, Vector2(0.75, 0.078651786), -1.2253101, -1.2253101, 0, 0, Vector2(0.9391892, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_ha105"]
+curve = SubResource("Curve_dfphf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_62bqa"]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 0.01
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_max = 1.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, 0.5, 0)
+scale_min = 0.7
+scale_curve = SubResource("CurveTexture_ha105")
+color_ramp = SubResource("GradientTexture1D_n465l")
+alpha_curve = SubResource("CurveTexture_4unhn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3tsps"]
+
+[node name="TurquoiseAura" type="Node3D" unique_id=648268594]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1820761196]
+material_override = SubResource("StandardMaterial3D_r2sev")
+amount = 64
+lifetime = 2.0
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_62bqa")
+draw_pass_1 = SubResource("QuadMesh_3tsps")
